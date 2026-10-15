@@ -5,10 +5,10 @@
 class Filme
 {
     // Propriedades: caracteristicas
-public string $titulo;
-public string $genero;
-public int $ano;
-public string $direcao;
+private string $titulo;
+private string $genero;
+private int $ano;
+private string $direcao;
 
 
     // Métodos: comportamentos (funções)
