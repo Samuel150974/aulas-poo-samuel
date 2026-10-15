@@ -4,14 +4,25 @@ Neste repositório utilizaremos o PHP com **Programação Orientada a Objetos**.
 
 Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo meno de branches no GitHub.
 
+
+
+---
+
+## Branch 02: Visibilidade e Encapsulamento
+
+- Visibilidade de propriedades: public e private
+- Encapsulamento
+- Métodos Getters para leitura
+- Métodos Setters para escrita
+
 ---
 
 ## Branch 01: Classes, Objetos, Propriedades e Métodos
 
-Classes e Objetos
-Propriedades e métodos
-Tipos de dados
-Uso do $this para acessar recursos de dentro da própria classe
+- Classes e Objetos
+- Propriedades e métodos
+- Tipos de dados
+- Uso do $this para acessar recursos de dentro da própria classe
 
 
 
