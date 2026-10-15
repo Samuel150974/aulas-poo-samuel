@@ -8,6 +8,10 @@ Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo meno de
 
 ## Branch 01: Classes, Objetos, Propriedades e Métodos
 
+Classes e Objetos
+Propriedades e métodos
+Tipos de dados
+Uso do $this para acessar recursos de dentro da própria classe
 
 
 
