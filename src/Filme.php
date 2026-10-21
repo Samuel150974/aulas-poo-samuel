@@ -1,70 +1,26 @@
 <?php
+// src/Filme.php
 
-//src/Filmes.php
+// Filme é uma subclasse que HERDA da superclasse Conteudo
+class Filme extends Conteudo
+{  
+    // Propriedade específica da classe Filme
+    private int $duracao;
 
-class Filme
-{
-    
-private string $titulo;
-private string $genero;
-private int $ano;
-private string $direcao;
+    /* Método construtor específico da subclasse Filme
+    Responsável por receber os valores no momento da criação de objeto Filme (incluindo a duração) */
+    public function __construct(string $titulo, string $genero, int $ano, int $duracao)
+    {
+        /* Chamamos o construtor da superclasse (classe pai) usando
+        parent::__construct(). Isso é necessário pois estes valores
+        pertecem às propriedades da classe pai. */
+        parent::__construct($titulo, $genero, $ano);
 
-
-  
-  public function ehClassico(): bool
-  {
-
-      return $this->ano < 2000;
-  }
-
-/* Métodos getters: permitem ACESSO/LEITURA (ler dados)*/
-public function getTitulo()
-{
-    return$this->titulo;
+        // Já quanto à duração, fazemos a atribuição aqui mesmo (afinal, $duração é de Filme)
+        $this->duracao = $duracao;
+    }
 }
 
-  public function getGenero()
-  {
-    return$this->genero;
-    
-  }
-
-  public function getAno(): int
-  {
-    return $this->ano;
-  }
-
-  public function getdirecao( )
-  {
-    return $this->direcao;
-  }
 
 
 
-/* Métodosos setters: permitem ACESSO (colocar dados)*/
-/* Setters recebem através de parâmetros os dados a serem colocados nas propriedades */
-
-public function setTitulo(string $titulo): void
-{
-  $this->titulo = $titulo;
-  }
-
-  public function setGenero(string $genero): void
-  {
-    $this->genero = $genero;
-    
-  }
-
-  public function setAno(int $ano): void
-  {
-    $this->ano = $ano;
-  }
-
-  public function setdirecao(string $direcao):void
-  {
-    $this->direcao = $direcao;
-  }
-
-}
-  
