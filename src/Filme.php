@@ -19,8 +19,17 @@ class Filme extends Conteudo
         // Já quanto à duração, fazemos a atribuição aqui mesmo (afinal, $duração é de Filme)
         $this->duracao = $duracao;
     }
+
+public function getDescricao(): string
+{
+    // O filme duna possui 100 minutos de duração
+    return "O filme $this->titulo possui $this->duracao minutos de duração";
 }
 
+
+
+
+}
 
 
 

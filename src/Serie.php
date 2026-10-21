@@ -23,6 +23,14 @@ class Serie extends Conteudo
     
             $this->temporadas = $temporadas;
         }
+
+
+
+        public function getDescricao(): string
+{
+    // O filme duna possui 100 minutos de duração
+    return "O filme $this->titulo possui $this->temporadas temporadas.";
+}
     }
 
 
