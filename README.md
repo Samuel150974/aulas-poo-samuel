@@ -2,9 +2,7 @@
 
 Neste repositório utilizaremos o PHP com **Programação Orientada a Objetos**.
 
-Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo meno de branches no GitHub.
-
-
+Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo menu de branches no GitHub.
 
 ---
 
@@ -23,6 +21,3 @@ Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo meno de
 - Propriedades e métodos
 - Tipos de dados
 - Uso do $this para acessar recursos de dentro da própria classe
-
-
-
