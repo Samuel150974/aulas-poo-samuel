@@ -2,22 +2,12 @@
 // Importando a classe
 require_once "src/Filme.php";
 
-$filme1 = new Filme();
+// Criando os objetos e passando os dados para o construtor
+$filme1 = new Filme('De Volta para o Futuro', 'Ficcão', 1985);
+$filme2 = new Filme('Toy Story', 'Animação', 1995);
+$filme3 = new Filme('Homem Aranha', 'Ação', 2026);
 
-// Utilizando os setters para colocar dados em cada objet
-$filme1->setTitulo("De volta para o Futuro");
-$filme1->setAno(1984);
-$filme1->setGenero("Ficção Científica");
-
-$filme2 = new Filme();
-$filme2->setTitulo("Toy Story");
-$filme2->setAno(1995);
-$filme2->setGenero("Animação");
-
-$filme3 = new Filme();
-$filme3->setTitulo("O Auto da Compadecida");
-$filme3->setGenero("Comédia");
-$filme3->setAno(2000);
+$filme1->setTitulo('dsds');
 
 // echo "<pre>";
 // var_dump($filme1, $filme2, $filme3);
@@ -65,10 +55,12 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Visibilidade de propriedades: <b>public</b> e <b>private</b></li>
-                <li>Encapsulamento</li>
-                <li>Métodos <b>Getters</b> para leitura</li>
-                <li>Métodos <b>Setters</b> para escrita</li>
+                <li>Finalidade do construtor</li>
+                <li>Implementação do método <b>__construct</b></li>
+                <li>Parâmetros/argumentos do construtor</li>
+                <li>Passagem de dados/valores ao criar objetos</li>
+                <li>Atribuição de valores para as propriedades usando o construtor</li>
+                <li>Uso de <b>setter</b> a partir do construtor</li>
             </ul>
         </div>
 
