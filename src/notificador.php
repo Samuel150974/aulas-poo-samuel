@@ -7,7 +7,7 @@ Usamos a Interface para garantir que todas as classes que utilizem, sigam um mes
 
 
 */
-interface Noticador{
+interface Notificador{
 /* O padrão definido aqui é: nome, parâmetros, tipo de dados dos parâmetro e tipo de retorno do método */
 public function enviar(string $mensagem): string;
 }
