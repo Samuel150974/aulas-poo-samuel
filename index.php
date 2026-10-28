@@ -25,8 +25,15 @@ $series = [$serie1, $serie2];
 // var_dump($filme1, $filme2, $filme3);
 // echo "</pre>";
 
-$filmes = [$filme1, $filme2, $filme3];
-?>
+
+
+/* Como a classe Conteudo foi definida como abstrata, a linha abaixo não funcionará pois não é possível criar objetos/instâncias diretamente à partir de classes abstratas*/
+// $conteudo = new Conteudo('Senhor dos anéis', 'Fantasia', 2001);
+//  var_dump($conteudo);
+
+// Lista com objetos = conteudos
+$conteudos = [$filme1, $filme2, $filme3]
+?>                                                                                                                                                                                                                                                                                                   
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,15 +52,21 @@ $filmes = [$filme1, $filme2, $filme3];
             <p>Três filmes para descobrir, rever e se divertir</p>
         </header>
 
-        <div class="filmes">
+        <div class="conteudos">
 
-            <?php foreach ($filmes as $filme): ?>
-                <article class="card-filme">
-                    <span class="genero"> <?= $filme->getGenero() ?> </span>
-                    <h2> <?= $filme->getTitulo() ?> </h2>
-                    <p class="ano">Lançamento: <?= $filme->getAno() ?> </p>
+            <?php foreach ($conteudos as $conteudo): ?>
+                <article class="card-conteudo">
+                    <span class="genero"> <?= $conteudo->getGenero() ?> </span>
 
-                    <?php if ($filme->ehClassico()): ?>
+                    <h2> <?= $conteudo->getTitulo() ?> </h2>
+
+                    <p class="ano">Lançamento: <?= $conteudo->getAno() ?> </p>
+
+                    <!-- POLIMORFISMO: a mesma chamada (getDescricao) de método, mas usando implementações diferentes -->
+
+                    <p> <?= $conteudo->getDescricao() ?></p>
+
+                    <?php if ($conteudo->ehClassico()): ?>
                         <span class="classico">Clássico</span>
                     <?php endif; ?>
 
@@ -89,14 +102,11 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Classe-pai (superclasse): <b>Conteudo</b></li>
-                <li>Classe-filha (subclasse): <b>Filme</b> e <b>Serie</b></li>
-                <li>Herança utilizando <b>extends</b></li>
-                <li>Herança com propriedades e métodos</li>
-                <li>Visibilidade <b>protected</b> na superclasse permitindo o acesso através das subclasses.</li>
-                <li>Construtor da superclase através de <b>parent::__construct()</b></li>
-                <li>Propriedades específicas das subclasses</li>
-
+               <li>Classe abstrata: <b>Conteudo</b></li>
+               <li>Impossibilidade de instanciar diretamente uma classe abstrata</li>
+               <li>Método abstrato: <b>getDescricao()</b></li>
+               <li>Obriga a implementação do método abstrato pelas classes filhas Filme e Serie</li>
+               <li>Polimorfismo: a mesma chamada a <b>getDescricao()</b> utiliza a implementação de cada classe</li>
             </ul>
         </div>
 
