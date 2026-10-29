@@ -6,12 +6,27 @@ require_once "./src/NotificadorEmail.php";
 
 require_once "./src/NotificadorSMS.php";
 
-$notificadores = [
-    new NotificadorEmail(),
-    new NotificadorSMS(),
-];
+$notificadorPorEmail = new NotificadorEmail();
+$notificadorPorSMS =  new NotificadorSMS();
 
+// Pedido 123abc
 
+$emailPedido1 = $notificadorPorEmail->enviar("Seu pedido 123abc foi confirmado");
+$smsPedido1 = $notificadorPorSMS->enviar("Seu pedido 123abc foi confirmado");
+
+// Pedido
+
+$emailPedido2 = $notificadorPorEmail->enviar("Seu pedido 566abc foi confirmado");
+
+$emailPedido3 = $notificadorPorEmail->enviar("Seu pedido 455abc foi confirmado");
+
+/* ****************** */
+
+$notificadorPorEmailTeste2 = new NotificadorEmail();
+$notificadorPorEmailTeste3 = new NotificadorEmail();
+
+$notificadorPorEmailTeste2->enviar("pedidos entregues");
+$notificadorPorEmailTeste3->enviar("pedidos á espera de avaliação");
 ?>
 
 <!DOCTYPE html>
@@ -33,32 +48,49 @@ $notificadores = [
         </header>
 
         <div class="conteudos">
-            <?php
-            $conteudoDaMensagem = "Seu pedido 'abc123' foi confirmado!";
-            foreach ($notificadores as $notificador):
-            ?>
-                <article class="card-conteudo">
-                    <h2>Notificação sobre o pedido:</h2>
-                    <p><?= $notificador->enviar($conteudoDaMensagem) ?></p>
-                </article>
-            <?php endforeach; ?>
+
+            <article class="card-conteudo">
+                <h2>Notificações: Pedido 123abc</h2>
+                <p> <?= $emailPedido1 ?> </p>
+                <p> <?= $smsPedido1 ?> </p>
+            </article>
+
+            <article class="card-conteudo">
+                <h2>Notificações: Pedido 566abc</h2>
+                <p> <?= $emailPedido2 ?> </p>
+                <p> </p>
+            </article>
+
+            <article class="card-conteudo">
+                <h2>Notificações: Pedido 455abc</h2>
+                <p> <?= $emailPedido3 ?> </p>
+                <p> </p>
+            </article>
+
         </div>
 
         <hr>
 
+        <section class="card-conteudo">
+
+            <h2>Resumo/Total dos envios de notificações</h2>
+
+            <p>E-mails enviados: <b> <?= NotificadorEmail::getQuantidadeEnviada() ?></b></p>
+
+            <p>SMS enviados: <b> <?= NotificadorEmail::getQuantidadeEnviada() ?></b></p>
+
+        </section>
+
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Interface <b>Notificador</b> como um contrato de comportamentos (métodos)</li>
-
-                <li>Definição do método <b> enviar(string$mensagem): string</b> na Interface</li>
-
-                <li>Aplicação da interface com <b>Implements</b>nas classes <b>NotificadorEmail</b> e <b>NotificadorSMS</b> </li>
-
-
-                <li>Implementação do método <b>enviar</b> em cada classe</li>
-                <li>Polimorfismo: a mesma chamada a <b>enviar</b> utiliza a implementação de cada classe.</li>
+                <li>Propriedades estáticas usando <b>static</b></li>
+                <li>Métodos estáticos usando <b>static</b></li>
+                <li>Acesso a recursos estáticos com <b>::</b></li>
+                <li>Acesso a recursos estáticos da própria classe usando <b>self</b></li>
+                <li>Diferença entre usar recursos estáticos de classe e recursos de objeto</li>
             </ul>
+
         </div>
 
     </div>

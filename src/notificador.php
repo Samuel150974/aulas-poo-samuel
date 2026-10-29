@@ -6,5 +6,5 @@ interface Notificador{
 
     public function enviar(string $mensagem): string;
    
-    public static function getQuantoidadeEnviada(): int;
+    public static function getQuantidadeEnviada(): int;
 }

@@ -2,14 +2,16 @@
 
 class NotificadorSMS implements Notificador
 {
-    private static int $quantidadeEnviada = 0;     
+    private static int $quantidadeEnviada = 0;
 
-    public function enviar(string $mensagem): string{
+    public function enviar(string $mensagem): string
+    {
+        self::$quantidadeEnviada++;
         return "SMS: $mensagem";
     }
 
-    public static function getQuantoidadeEnviada(): int
+    public static function getQuantidadeEnviada(): int
     {
-        return self::getQuantoidadeEnviada();
+        return self::$quantidadeEnviada;
     }
 }

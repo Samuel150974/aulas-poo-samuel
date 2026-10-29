@@ -15,7 +15,7 @@ class NotificadorEmail implements Notificador
      
     /* Usaremos um getter estático para ter acesso ao total de envios feitos */
 
-    public static function getQuantoidadeEnviada(): int{
+    public static function getQuantidadeEnviada(): int{
         return self::$quantidadeEnviada;
     }
 
