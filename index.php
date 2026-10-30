@@ -2,9 +2,14 @@
 
 /* Nesta segunda forma, basta indicar o uso do recurso através do namespace */
 use App\Pedidos\Pedido;
+
+// Repare que aqui definimos um apelido (as) para solucionar o conflito de nomes de classe
+use App\Relatorios\Pedido as RelatorioPedido;
+
 use App\Pedidos\StatusPedido;
 
 // Atualizamos os caminhos físicos (pasta/arquivo.php)
+require_once "src/Relatorios/Pedido.php";
 require_once "src/Pedidos/StatusPedido.php"; // a Enumeração DEVE vir primeiro
 require_once "src/Pedidos/Pedido.php"; // pois a classe Pedido precisa dela
 
@@ -27,6 +32,13 @@ $pedido4 = new Pedido(1004, "Mônica Santos", StatusPedido::SaiuParaEntrega);
 $pedido3->setStatus(StatusPedido::Pago);
 
 $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
+
+// Criando um objeto a partir da classe Pedido do subnamespace Relatorios
+
+$relatorioPedido1 = new RelatorioPedido();
+$relatorioPedido2 = new App\Relatorios\Pedido();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
