@@ -1,5 +1,9 @@
 <?php 
 
+/* Nesta segunda forma, basta indicar o uso do recurso através do namespace */
+use App\Pedidos\Pedido;
+use App\Pedidos\StatusPedido;
+
 // Atualizamos os caminhos físicos (pasta/arquivo.php)
 require_once "src/Pedidos/StatusPedido.php"; // a Enumeração DEVE vir primeiro
 require_once "src/Pedidos/Pedido.php"; // pois a classe Pedido precisa dela
@@ -10,8 +14,8 @@ require_once "src/Notificacoes/NotificadorEmail.php";
 // Veja que nessa primeira forma, precisamos passar o nome completo da classe
 $notificadorPorEmail = new App\Notificacoes\NotificadorEmail();
 
-var_dump($notificadorPorEmail);
-die();
+// var_dump($notificadorPorEmail);
+// die();
 
 /* Repare no terceiro parâmetro: é OBRIGATÓRIO usar uma das opções definidas na Enum. */
 $pedido1 = new Pedido(1001, "Fulano da Silva", StatusPedido::Pendente);
