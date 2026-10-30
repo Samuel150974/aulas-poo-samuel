@@ -7,16 +7,10 @@ use App\Pedidos\Pedido;
 // Repare que aqui definimos um apelido (as) para solucionar o conflito de nomes de classe
 use App\Relatorios\Pedido as RelatorioPedido;
 
+use App\Saudacao;
 use App\Pedidos\StatusPedido;
 
-// Atualizamos os caminhos físicos (pasta/arquivo.php)
-require_once "src/Relatorios/Pedido.php";
-require_once "src/Pedidos/StatusPedido.php"; // a Enumeração DEVE vir primeiro
-require_once "src/Pedidos/Pedido.php"; // pois a classe Pedido precisa dela
-
-require_once "src/Notificacoes/Notificador.php";
-require_once "src/Notificacoes/NotificadorEmail.php";
-
+require_once "vendor/autoload.php";
 // Veja que nessa primeira forma, precisamos passar o nome completo da classe
 $notificadorPorEmail = new App\Notificacoes\NotificadorEmail();
 
@@ -39,6 +33,7 @@ $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
 $relatorioPedido1 = new RelatorioPedido();
 $relatorioPedido2 = new App\Relatorios\Pedido();
 
+$saudacao = new Saudacao();
 
 ?>
 <!DOCTYPE html>
@@ -57,6 +52,7 @@ $relatorioPedido2 = new App\Relatorios\Pedido();
             <p class="destaque">Loja Virtual</p>
             <h1>Pedidos da loja virtual</h1>
             <p>Cada pedido possui um status: Pendente, Aguardando pagamento, Em preparação, Pago ou Saiu para entrega</p>
+            <p>Testando a saudação: <?= $saudacao->cumprimentar() ?></p>
         </header>
 
         <div class="conteudos">
