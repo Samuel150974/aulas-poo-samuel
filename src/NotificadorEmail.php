@@ -2,11 +2,25 @@
 
 class NotificadorEmail implements Notificador
 {
-
-/* Implementação do método enviar de acordo com os padrões definidos na Interface: mesmo nome, mesma quantidade de parâmetros, mesmo tipo de dados dos parâmetros, mesmo tipo de retorno esperado */
+    // Contador de envios
+    private static int $quantidadeEnviada = 0;
+   
     public function enviar(string $mensagem): string{
      
+    /* Sempre que ocorrer o acionamento do méotodo enviar, atualizaremos a propriedade estática de classe  */
+    self::$quantidadeEnviada++;
     return "E-mail: $mensagem";
 
     }
+     
+    /* Usaremos um getter estático para ter acesso ao total de envios feitos */
+
+    public static function getQuantidadeEnviada(): int{
+        return self::$quantidadeEnviada;
+    }
+
+
+
+
+
 }
